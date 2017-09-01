@@ -29,10 +29,10 @@ public class StringArray {
 	private static int s_year = MAIN_YEAR;
 	private static String[] s_yearData = new String[YEAR_DATA_SIZE];
 
-	public static void initialize(IFModel model) {
+	public static void initialize(Model model) {
 		Object lValue = model.getValue("Steuerjahr");
-		if (lValue != null)
-			s_year = IFMath.intValue(lValue);
+		 (lValue != null)
+			s_year = Math.intValue(lValue);
 		else
 			s_year = MAIN_YEAR;
 		
@@ -60,7 +60,7 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static String appendYear(String in) {
-		if (in == null) {
+		 (in == null) {
 			return null;
 		}
 		return in + " " + getYearString();
@@ -72,7 +72,7 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static String appendYear(String in, int delta) {
-		if (in == null) {
+		 (in == null) {
 			return null;
 		}
 		return in + " " + getYearString(delta);
@@ -84,7 +84,7 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static void appendYearForText(JLabel l) {
-		if (l == null) {
+		 (l == null) {
 			return;
 		}
 		l.setText(appendYear(l.getText()));
@@ -96,7 +96,7 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static void appendYearForText(JLabel l, int delta) {
-		if (l == null) {
+		 (l == null) {
 			return;
 		}
 		l.setText(appendYear(l.getText(), delta));
@@ -108,7 +108,7 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static void appendYearForTitle(Dialog d) {
-		if (d == null) {
+		 (d == null) {
 			return;
 		}
 		d.setTitle(appendYear(d.getTitle()));
@@ -120,7 +120,7 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static void appendYearForTitle(FormsMainPanel panel) {
-		if (panel == null) {
+		 (panel == null) {
 			return;
 		}
 		panel.setTitle(appendYear(panel.getTitle()));
@@ -131,8 +131,8 @@ public class StringArray {
 	 * 
 	 * @return
 	 */
-	public static IFDateColumn getDateColumnForThisYear(String text, String modelId, int columns) {
-		IFDateColumn lDateColumn = new IFDateColumn(text, modelId, columns);
+	public static DateColumn getDateColumnForThisYear(String text, String modelId, int columns) {
+		DateColumn lDateColumn = new DateColumn(text, modelId, columns);
 		lDateColumn.setMinimumYear(getYearInt());
 		lDateColumn.setMaximumYear(getYearInt());
 		return lDateColumn;
@@ -202,7 +202,7 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static String paramYear(String in) {
-		return IFStringUtils.paramText(in, new String[] { getYearString() });
+		return StringUtils.paramText(in, new String[] { getYearString() });
 	}
 	
 	/**
@@ -211,7 +211,7 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static String paramYear(String in, int delta) {
-		return IFStringUtils.paramText(in, new String[] { getYearString(delta) });
+		return StringUtils.paramText(in, new String[] { getYearString(delta) });
 	}
 
 	/**
@@ -220,7 +220,7 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static String paramMainYear(String in) {
-		return IFStringUtils.paramText(in, new String[] { getMainYearString() });
+		return StringUtils.paramText(in, new String[] { getMainYearString() });
 	}
 
 	/**
@@ -229,10 +229,10 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static void paramYearForText(JLabel l) {
-		if (l == null) {
+		 (l == null) {
 			return;
 		}
-		l.setText(IFStringUtils.paramText(l.getText(), new String[] { getYearString() }));
+		l.setText(StringUtils.paramText(l.getText(), new String[] { getYearString() }));
 	}
 
 	/**
@@ -241,10 +241,10 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static void paramYearForText(JLabel l, int delta) {
-		if (l == null) {
+		 (l == null) {
 			return;
 		}
-		l.setText(IFStringUtils.paramText(l.getText(), new String[] { getYearString(delta) }));
+		l.setText(StringUtils.paramText(l.getText(), new String[] { getYearString(delta) }));
 	}
 
 	/**
@@ -253,10 +253,10 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static void paramYearForText(JTextArea t) {
-		if (t == null) {
+		 (t == null) {
 			return;
 		}
-		t.setText(IFStringUtils.paramText(t.getText(), new String[] { getYearString() }));
+		t.setText(StringUtils.paramText(t.getText(), new String[] { getYearString() }));
 	}
 
 	/**
@@ -265,10 +265,10 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static void paramYearForText(JTextArea t, int delta) {
-		if (t == null) {
+		 (t == null) {
 			return;
 		}
-		t.setText(IFStringUtils.paramText(t.getText(), new String[] { getYearString(delta) }));
+		t.setText(StringUtils.paramText(t.getText(), new String[] { getYearString(delta) }));
 	}
 
 	/**
@@ -277,10 +277,10 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static void paramYearForTitle(Dialog d) {
-		if (d == null) {
+		 (d == null) {
 			return;
 		}
-		d.setTitle(IFStringUtils.paramText(d.getTitle(), new String[] { getYearString() }));
+		d.setTitle(StringUtils.paramText(d.getTitle(), new String[] { getYearString() }));
 	}
 
 	/**
@@ -289,10 +289,10 @@ public class StringArray {
 	 * @return java.lang.String
 	 */
 	public static void paramYearForTitle(FormsMainPanel p) {
-		if (p == null) {
+		 (p == null) {
 			return;
 		}
-		p.setTitle(IFStringUtils.paramText(p.getTitle(), new String[] { getYearString() }));
+		p.setTitle(StringUtils.paramText(p.getTitle(), new String[] { getYearString() }));
 	}
 	
 	public static String getYearYY(){
