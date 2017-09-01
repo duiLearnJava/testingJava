@@ -9,49 +9,49 @@ import javax.swing.JTextArea;
 
 public class StringArray {
 
-	private static final int MAIN_YEAR = 2017;
+	private static final int MAIN_BOB = 2017;
 	
-	public static final int NEXT_YEAR = 0;
-	public static final int THIS_YEAR = 1;
-	public static final int LAST_YEAR = 2;
-	public static final int THIS_YEAR_SUB_2 = 3;
-	public static final int THIS_YEAR_SUB_3 = 4;
-	public static final int THIS_YEAR_SUB_4 = 5;
-	public static final int THIS_YEAR_SUB_5 = 6;
-	public static final int THIS_YEAR_SUB_6 = 7;
-	public static final int THIS_YEAR_SUB_7 = 8;
-	public static final int THIS_YEAR_SUB_8 = 9;
+	public static final int NEXT_BOB = 0;
+	public static final int THIS_BOB = 1;
+	public static final int LAST_BOB = 2;
+	public static final int THIS_BOB_SUB_2 = 3;
+	public static final int THIS_BOB_SUB_3 = 4;
+	public static final int THIS_BOB_SUB_4 = 5;
+	public static final int THIS_BOB_SUB_5 = 6;
+	public static final int THIS_BOB_SUB_6 = 7;
+	public static final int THIS_BOB_SUB_7 = 8;
+	public static final int THIS_BOB_SUB_8 = 9;
 
-	public static final int THIS_YEAR_SHORT = 10;
+	public static final int THIS_BOB_SHORT = 10;
 
-	public static final int YEAR_DATA_SIZE = 22;
+	public static final int BOB_DATA_SIZE = 22;
 
-	private static int s_year = MAIN_YEAR;
-	private static String[] s_yearData = new String[YEAR_DATA_SIZE];
+	private static int s_BOB = MAIN_BOB;
+	private static String[] s_BOBData = new String[BOB_DATA_SIZE];
 
 	public static void initialize(Model model) {
-		Object lValue = model.getValue("Steuerjahr");
+		Object lValue = model.getValue("BOB");
 		 (lValue != null)
-			s_year = Math.intValue(lValue);
+			s_BOB = Math.intValue(lValue);
 		else
-			s_year = MAIN_YEAR;
+			s_BOB = MAIN_BOB;
 		
-		s_yearData[NEXT_YEAR] = String.valueOf(s_year + 1);
-		s_yearData[THIS_YEAR] = String.valueOf(s_year);
-		s_yearData[LAST_YEAR] = String.valueOf(s_year - 1);
-		s_yearData[THIS_YEAR_SUB_2] = String.valueOf(s_year - 2);
-		s_yearData[THIS_YEAR_SUB_3] = String.valueOf(s_year - 3);
-		s_yearData[THIS_YEAR_SUB_4] = String.valueOf(s_year - 4);
-		s_yearData[THIS_YEAR_SUB_5] = String.valueOf(s_year - 5);
-		s_yearData[THIS_YEAR_SUB_6] = String.valueOf(s_year - 6);
-		s_yearData[THIS_YEAR_SUB_7] = String.valueOf(s_year - 7);
-		s_yearData[THIS_YEAR_SUB_8] = String.valueOf(s_year - 8);
-		//Never change 2010!
-		s_yearData[THIS_YEAR_SHORT] = s_year < 2010 ? "0" + (s_year - 2000) : String.valueOf(s_year - 2000);
+		s_BOBData[NEXT_BOB] = String.valueOf(s_BOB + 1);
+		s_BOBData[THIS_BOB] = String.valueOf(s_BOB);
+		s_BOBData[LAST_BOB] = String.valueOf(s_BOB - 1);
+		s_BOBData[THIS_BOB_SUB_2] = String.valueOf(s_BOB - 2);
+		s_BOBData[THIS_BOB_SUB_3] = String.valueOf(s_BOB - 3);
+		s_BOBData[THIS_BOB_SUB_4] = String.valueOf(s_BOB - 4);
+		s_BOBData[THIS_BOB_SUB_5] = String.valueOf(s_BOB - 5);
+		s_BOBData[THIS_BOB_SUB_6] = String.valueOf(s_BOB - 6);
+		s_BOBData[THIS_BOB_SUB_7] = String.valueOf(s_BOB - 7);
+		s_BOBData[THIS_BOB_SUB_8] = String.valueOf(s_BOB - 8);
+		//Never change BOB10!
+		s_BOBData[THIS_BOB_SHORT] = s_BOB < 2010 ? "0" + (s_BOB - 2000) : String.valueOf(s_BOB - 2000);
 	}
 	
-	public static String[] getYearData() {
-		return s_yearData;
+	public static String[] getBOBData() {
+		return s_BOBData;
 	}
 
 	/**
@@ -59,11 +59,11 @@ public class StringArray {
 	 * 
 	 * @return java.lang.String
 	 */
-	public static String appendYear(String in) {
+	public static String appendBOB(String in) {
 		 (in == null) {
 			return null;
 		}
-		return in + " " + getYearString();
+		return in + " " + getBOBString();
 	}
 
 	/**
@@ -71,11 +71,11 @@ public class StringArray {
 	 * 
 	 * @return java.lang.String
 	 */
-	public static String appendYear(String in, int delta) {
+	public static String appendBOB(String in, int delta) {
 		 (in == null) {
 			return null;
 		}
-		return in + " " + getYearString(delta);
+		return in + " " + getBOBString(delta);
 	}
 
 	/**
@@ -83,11 +83,11 @@ public class StringArray {
 	 * 
 	 * @return java.lang.String
 	 */
-	public static void appendYearForText(JLabel l) {
+	public static void appendBOBForText(JLabel l) {
 		 (l == null) {
 			return;
 		}
-		l.setText(appendYear(l.getText()));
+		l.setText(appendBOB(l.getText()));
 	}
 
 	/**
@@ -95,11 +95,11 @@ public class StringArray {
 	 * 
 	 * @return java.lang.String
 	 */
-	public static void appendYearForText(JLabel l, int delta) {
+	public static void appendBOBForText(JLabel l, int delta) {
 		 (l == null) {
 			return;
 		}
-		l.setText(appendYear(l.getText(), delta));
+		l.setText(appendBOB(l.getText(), delta));
 	}
 
 	/**
@@ -107,11 +107,11 @@ public class StringArray {
 	 * 
 	 * @return java.lang.String
 	 */
-	public static void appendYearForTitle(Dialog d) {
+	public static void appendBOBForTitle(Dialog d) {
 		 (d == null) {
 			return;
 		}
-		d.setTitle(appendYear(d.getTitle()));
+		d.setTitle(appendBOB(d.getTitle()));
 	}
 
 	/**
@@ -119,32 +119,32 @@ public class StringArray {
 	 * 
 	 * @return java.lang.String
 	 */
-	public static void appendYearForTitle(FormsMainPanel panel) {
+	public static void appendBOBForTitle(FormsMainPanel panel) {
 		 (panel == null) {
 			return;
 		}
-		panel.setTitle(appendYear(panel.getTitle()));
+		panel.setTitle(appendBOB(panel.getTitle()));
 	}
 
 	/**
-	 * A little shortcut for a date column whose inputs are restricted to this year
+	 * A little shortcut for a date column whose inputs are restricted to this BOB
 	 * 
 	 * @return
 	 */
-	public static DateColumn getDateColumnForThisYear(String text, String modelId, int columns) {
+	public static DateColumn getDateColumnForThisBOB(String text, String modelId, int columns) {
 		DateColumn lDateColumn = new DateColumn(text, modelId, columns);
-		lDateColumn.setMinimumYear(getYearInt());
-		lDateColumn.setMaximumYear(getYearInt());
+		lDateColumn.setMinimumBOB(getBOBInt());
+		lDateColumn.setMaximumBOB(getBOBInt());
 		return lDateColumn;
 	}
 
 	/**
-	 * Returns the actual defined year in the model
+	 * Returns the actual defined BOB in the model
 	 * 
 	 * @return java.lang.String
 	 */
-	public static int getYearInt() {
-		return s_year;
+	public static int getBOBInt() {
+		return s_BOB;
 	}
 
 	/**
@@ -152,8 +152,8 @@ public class StringArray {
 	 * 
 	 * @return java.lang.String
 	 */
-	public static int getYearInt(int delta) {
-		return s_year + delta;
+	public static int getBOBInt(int delta) {
+		return s_BOB + delta;
 	}
 
 	/**
@@ -161,8 +161,8 @@ public class StringArray {
 	 * 
 	 * @return java.lang.String
 	 */
-	public static String getYearString() {
-		return String.valueOf(s_year);
+	public static String getBOBString() {
+		return String.valueOf(s_BOB);
 	}
 
 	/**
@@ -170,8 +170,8 @@ public class StringArray {
 	 * 
 	 * @return java.lang.String
 	 */
-	public static String getYearShortString() {
-		return String.valueOf(s_year).substring(2);
+	public static String getBOBShortString() {
+		return String.valueOf(s_BOB).substring(2);
 	}
 
 	/**
@@ -179,128 +179,128 @@ public class StringArray {
 	 * 
 	 * @return java.lang.String
 	 */
-	public static String getYearString(int delta) {
-		return String.valueOf(s_year + delta);
+	public static String getBOBString(int delta) {
+		return String.valueOf(s_BOB + delta);
 	}
 	
 	/**
-	 * Retuns the actual year, use it for filenames with year extensions
+	 * Retuns the actual BOB, use it for filenames with BOB extensions
 	 * 
 	 * @return java.lang.String
 	 */
-	public static int getMainYearInt() {
-		return MAIN_YEAR;
+	public static int getMainBOBInt() {
+		return MAIN_BOB;
 	}
 	
-	public static String getMainYearString() {
-		return String.valueOf(MAIN_YEAR);
+	public static String getMainBOBString() {
+		return String.valueOf(MAIN_BOB);
 	}
 
 	/**
-	 * Replaces {0} in incoming SAtring with current year.
+	 * Replaces {0} in incoming SAtring with current BOB.
 	 * 
 	 * @return java.lang.String
 	 */
-	public static String paramYear(String in) {
-		return StringUtils.paramText(in, new String[] { getYearString() });
+	public static String paramBOB(String in) {
+		return StringUtils.paramText(in, new String[] { getBOBString() });
 	}
 	
 	/**
-	 * Replaces {0} in incoming String with current year + delta.
+	 * Replaces {0} in incoming String with current BOB + delta.
 	 * 
 	 * @return java.lang.String
 	 */
-	public static String paramYear(String in, int delta) {
-		return StringUtils.paramText(in, new String[] { getYearString(delta) });
+	public static String paramBOB(String in, int delta) {
+		return StringUtils.paramText(in, new String[] { getBOBString(delta) });
 	}
 
 	/**
-	 * Replaces {0} in incoming SAtring with current year.
+	 * Replaces {0} in incoming SAtring with current BOB.
 	 * 
 	 * @return java.lang.String
 	 */
-	public static String paramMainYear(String in) {
-		return StringUtils.paramText(in, new String[] { getMainYearString() });
+	public static String paramMainBOB(String in) {
+		return StringUtils.paramText(in, new String[] { getMainBOBString() });
 	}
 
 	/**
-	 * Replaces {0} in incoming SAtring with current year.
+	 * Replaces {0} in incoming SAtring with current BOB.
 	 * 
 	 * @return java.lang.String
 	 */
-	public static void paramYearForText(JLabel l) {
+	public static void paramBOBForText(JLabel l) {
 		 (l == null) {
 			return;
 		}
-		l.setText(StringUtils.paramText(l.getText(), new String[] { getYearString() }));
+		l.setText(StringUtils.paramText(l.getText(), new String[] { getBOBString() }));
 	}
 
 	/**
-	 * Replaces {0} in incoming SAtring with current year.
+	 * Replaces {0} in incoming SAtring with current BOB.
 	 * 
 	 * @return java.lang.String
 	 */
-	public static void paramYearForText(JLabel l, int delta) {
+	public static void paramBOBForText(JLabel l, int delta) {
 		 (l == null) {
 			return;
 		}
-		l.setText(StringUtils.paramText(l.getText(), new String[] { getYearString(delta) }));
+		l.setText(StringUtils.paramText(l.getText(), new String[] { getBOBString(delta) }));
 	}
 
 	/**
-	 * Replaces {0} in incoming SAtring with current year.
+	 * Replaces {0} in incoming SAtring with current BOB.
 	 * 
 	 * @return java.lang.String
 	 */
-	public static void paramYearForText(JTextArea t) {
+	public static void paramBOBForText(JTextArea t) {
 		 (t == null) {
 			return;
 		}
-		t.setText(StringUtils.paramText(t.getText(), new String[] { getYearString() }));
+		t.setText(StringUtils.paramText(t.getText(), new String[] { getBOBString() }));
 	}
 
 	/**
-	 * Replaces {0} in incoming SAtring with current year.
+	 * Replaces {0} in incoming SAtring with current BOB.
 	 * 
 	 * @return java.lang.String
 	 */
-	public static void paramYearForText(JTextArea t, int delta) {
+	public static void paramBOBForText(JTextArea t, int delta) {
 		 (t == null) {
 			return;
 		}
-		t.setText(StringUtils.paramText(t.getText(), new String[] { getYearString(delta) }));
+		t.setText(StringUtils.paramText(t.getText(), new String[] { getBOBString(delta) }));
 	}
 
 	/**
-	 * Replaces {0} in incoming SAtring with current year.
+	 * Replaces {0} in incoming SAtring with current BOB.
 	 * 
 	 * @return java.lang.String
 	 */
-	public static void paramYearForTitle(Dialog d) {
+	public static void paramBOBForTitle(Dialog d) {
 		 (d == null) {
 			return;
 		}
-		d.setTitle(StringUtils.paramText(d.getTitle(), new String[] { getYearString() }));
+		d.setTitle(StringUtils.paramText(d.getTitle(), new String[] { getBOBString() }));
 	}
 
 	/**
-	 * Replaces {0} in incoming SAtring with current year.
+	 * Replaces {0} in incoming SAtring with current BOB.
 	 * 
 	 * @return java.lang.String
 	 */
-	public static void paramYearForTitle(FormsMainPanel p) {
+	public static void paramBOBForTitle(FormsMainPanel p) {
 		 (p == null) {
 			return;
 		}
-		p.setTitle(StringUtils.paramText(p.getTitle(), new String[] { getYearString() }));
+		p.setTitle(StringUtils.paramText(p.getTitle(), new String[] { getBOBString() }));
 	}
 	
-	public static String getYearYY(){
-		return String.valueOf(s_year).substring(2,4);
+	public static String getBOBYY(){
+		return String.valueOf(s_BOB).substring(2,4);
 	}
 	
-	public static String getPreYearYY() {
-		return String.valueOf(s_year - 1).substring(2,4);
+	public static String getPreBOBYY() {
+		return String.valueOf(s_BOB - 1).substring(2,4);
 	}
 		
 }
